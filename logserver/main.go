@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/maprost/playground/userserver/core/sys"
 	"github.com/maprost/playground/userserver/core/data"
+	"github.com/maprost/playground/userserver/core/sys"
 	"net/http"
 )
 

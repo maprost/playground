@@ -8,4 +8,3 @@ import (
 func InitConfig() {
 	gxcfg.InitConfig("config.gox", gxcfg.DatabaseAccessPort)
 }
-
