@@ -5,10 +5,10 @@ import (
 	"github.com/gorilla/mux"
 	"net/http"
 
+	logclient "github.com/maprost/playground/logserver/client"
 	"github.com/maprost/playground/userserver/client"
 	"github.com/maprost/playground/userserver/core/data"
 	"github.com/maprost/playground/userserver/core/util"
-	logclient "github.com/maprost/playground/logserver/client"
 )
 
 func initUser(router *mux.Router) {
