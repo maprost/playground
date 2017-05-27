@@ -3,16 +3,18 @@ package core
 import (
 	"encoding/json"
 	"github.com/gorilla/mux"
-	"github.com/maprost/gox/testexample/userserver/client"
-	"github.com/maprost/gox/testexample/userserver/core/data"
 	"net/http"
-	"os/user"
+
+	"github.com/maprost/playground/userserver/client"
+	"github.com/maprost/playground/userserver/core/data"
+	"github.com/maprost/playground/userserver/core/util"
+	logclient "github.com/maprost/playground/logserver/client"
 )
 
-func InitUser(router *mux.Router) {
-	router.Path("/user").Methods(http.MethodPost).Handler(createUser)
-	router.Path("/user/{email}").Methods(http.MethodDelete).Handler(deleteUser)
-	router.Path("/user").Methods(http.MethodGet).Handler(getUsers)
+func initUser(router *mux.Router) {
+	router.Path("/user").Methods(http.MethodPost).HandlerFunc(createUser)
+	router.Path("/user/{email}").Methods(http.MethodDelete).HandlerFunc(deleteUser)
+	router.Path("/user").Methods(http.MethodGet).HandlerFunc(getUsers)
 }
 
 func createUser(writer http.ResponseWriter, request *http.Request) {
@@ -29,6 +31,8 @@ func createUser(writer http.ResponseWriter, request *http.Request) {
 		Email:        userDto.Email,
 		PasswordHash: userDto.PasswordHash,
 	}
+
+	logclient.Ping()
 
 	err = user.Insert()
 	if err != nil {
@@ -55,12 +59,22 @@ func deleteUser(writer http.ResponseWriter, request *http.Request) {
 	writer.WriteHeader(http.StatusNoContent)
 }
 
-func getUsers(writer http.ResponseWriter, request *http.Request) {
+func getUsers(writer http.ResponseWriter, _ *http.Request) {
 	users, err := data.GetUsers()
 	if err != nil {
 		http.Error(writer, "Can't load user out of database.", http.StatusBadRequest)
 		return
 	}
 
-	writer.WriteHeader(http.StatusNoContent)
+	// convert to dto
+	userDtos := util.ConvertUsersToUserDtos(users)
+
+	js, err := json.Marshal(userDtos)
+	if err != nil {
+		http.Error(writer, "Some internal problem", http.StatusInternalServerError)
+		return
+	}
+
+	writer.Header().Set("Content-Type", "application/json")
+	writer.Write(js)
 }

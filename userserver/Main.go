@@ -1,8 +1,11 @@
-package userserver
+package main
 
 import (
-	"github.com/maprost/gox/testexample/userserver/core/data"
-	"github.com/maprost/gox/testexample/userserver/core/sys"
+	"net/http"
+
+	"github.com/maprost/playground/userserver/core"
+	"github.com/maprost/playground/userserver/core/data"
+	"github.com/maprost/playground/userserver/core/sys"
 )
 
 func main() {
@@ -11,4 +14,6 @@ func main() {
 	data.OpenDB()
 	data.Register()
 
+	router := core.InitServer()
+	http.ListenAndServe(":"+sys.GetPort(), router)
 }

@@ -24,7 +24,7 @@ func DeleteUser(email string) error {
 		"DELETE FROM UserAccount "+
 			" WHERE email = "+args.Next(email), args)
 	if err != nil {
-		err
+		return err
 	}
 	result.Close()
 	return nil

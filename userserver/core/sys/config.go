@@ -6,9 +6,13 @@ import (
 )
 
 func InitConfig() {
-	gxcfg.InitConfig("example.gox", gxcfg.DatabaseAccessPort)
+	gxcfg.InitConfig("config.gox", gxcfg.DatabaseAccessPort)
 }
 
 func GetDBConfig() pqdep.ConnectionInfo {
 	return gxcfg.GetConfig().Database[0]
+}
+
+func GetPort() string {
+	return gxcfg.GetConfig().Port
 }
