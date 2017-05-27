@@ -1,7 +1,7 @@
 {
   "port": "8091",
   "docker": {
-    "container": "log-server",
+    "container": "ping-server",
     "image": "golang:latest",
     "volume": []
   }

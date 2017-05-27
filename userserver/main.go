@@ -3,9 +3,9 @@ package main
 import (
 	"net/http"
 
-	"github.com/maprost/playground/userserver/core"
-	"github.com/maprost/playground/userserver/core/data"
-	"github.com/maprost/playground/userserver/core/sys"
+	"github.com/maprost/playground/userserver/internal"
+	"github.com/maprost/playground/userserver/internal/data"
+	"github.com/maprost/playground/userserver/internal/sys"
 )
 
 func main() {
@@ -14,6 +14,7 @@ func main() {
 	data.OpenDB()
 	data.Register()
 
-	router := core.InitServer()
+	router := internal.InitServer()
+
 	http.ListenAndServe(":"+sys.GetPort(), router)
 }

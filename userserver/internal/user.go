@@ -1,14 +1,13 @@
-package core
+package internal
 
 import (
 	"encoding/json"
 	"github.com/gorilla/mux"
 	"net/http"
 
-	logclient "github.com/maprost/playground/logserver/client"
 	"github.com/maprost/playground/userserver/client"
-	"github.com/maprost/playground/userserver/core/data"
-	"github.com/maprost/playground/userserver/core/util"
+	"github.com/maprost/playground/userserver/internal/data"
+	"github.com/maprost/playground/userserver/internal/util"
 )
 
 func initUser(router *mux.Router) {
@@ -31,8 +30,6 @@ func createUser(writer http.ResponseWriter, request *http.Request) {
 		Email:        userDto.Email,
 		PasswordHash: userDto.PasswordHash,
 	}
-
-	logclient.Ping()
 
 	err = user.Insert()
 	if err != nil {

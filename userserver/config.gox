@@ -29,7 +29,7 @@
     }
   ],
   "clients": {
-    "LogServer": "http://172.17.0.1:8091"
+    "PingServer": "http://172.17.0.1:8091"
   }
 }
 

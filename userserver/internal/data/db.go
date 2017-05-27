@@ -3,7 +3,7 @@ package data
 import (
 	"github.com/maprost/pqx"
 
-	"github.com/maprost/playground/userserver/core/sys"
+	"github.com/maprost/playground/userserver/internal/sys"
 )
 
 func OpenDB() {

@@ -2,7 +2,7 @@ package util
 
 import (
 	"github.com/maprost/playground/userserver/client"
-	"github.com/maprost/playground/userserver/core/data"
+	"github.com/maprost/playground/userserver/internal/data"
 )
 
 func ConvertUserToUserDto(user data.UserAccount) client.UserDto {
