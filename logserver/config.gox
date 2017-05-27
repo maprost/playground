@@ -1,0 +1,12 @@
+{
+  "port": "8091",
+  "docker": {
+    "container": "log-server",
+    "image": "golang:latest",
+    "volume": []
+  }
+}
+
+
+
+
