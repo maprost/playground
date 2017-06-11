@@ -10,10 +10,6 @@ type UserAccount struct {
 	PasswordHash string
 }
 
-func CreateUser() error {
-	return pqx.Create(UserAccount{})
-}
-
 func (u *UserAccount) Insert() error {
 	return pqx.Insert(u)
 }

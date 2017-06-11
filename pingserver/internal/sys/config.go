@@ -5,7 +5,7 @@ import (
 )
 
 func InitConfig() {
-	gxcfg.InitConfig("config.gox", gxcfg.DatabaseAccessPort)
+	gxcfg.InitConfig("local.gx")
 }
 
 func GetPort() string {

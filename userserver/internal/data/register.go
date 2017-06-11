@@ -1,7 +1,9 @@
 package data
 
+import "github.com/maprost/pqx"
+
 func Register() {
-	err := CreateUser()
+	err := pqx.Register(UserAccount{})
 	if err != nil {
 		panic(err)
 	}

@@ -1,0 +1,21 @@
+{
+  "port": "8080",
+  "databases": [
+    {
+      "driver": "postgres",
+      "dbname": "userdb",
+      "user": "postgres",
+      "password": "",
+      "docker": {
+        "discspace": "~/workspace/database/postgres5439"
+      }
+    }
+  ],
+  "clients": {
+    "PingServer": "http://172.17.0.1:8091"
+  }
+}
+
+
+
+
