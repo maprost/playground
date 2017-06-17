@@ -1,5 +1,5 @@
 package test
 
 //func CreateUser204() {
-//	result := client.CreateUser()
+//	result := clientlib.CreateUser()
 //}

@@ -5,7 +5,7 @@ import (
 	"github.com/maprost/restclient"
 	"github.com/maprost/restclient/rctest"
 
-	"github.com/maprost/playground/pingserver/client"
+	"github.com/maprost/playground/pingserver/clientlib"
 )
 
 func Ping204(assert assertion.Assert) {
@@ -13,6 +13,6 @@ func Ping204(assert assertion.Assert) {
 }
 
 func Ping(assert assertion.Assert, expected restclient.Result) {
-	result := client.Ping(getTestServerUrl())
+	result := clientlib.Ping(getTestServerUrl())
 	rctest.AssertResult(assert, result, expected)
 }

@@ -9,7 +9,6 @@ import (
 )
 
 func main() {
-
 	sys.InitConfig()
 	data.OpenDB()
 	data.Register()

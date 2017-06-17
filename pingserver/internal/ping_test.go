@@ -1,8 +1,9 @@
 package internal_test
 
 import (
-	"github.com/maprost/playground/pingserver/internal/test"
 	"testing"
+
+	"github.com/maprost/playground/pingserver/internal/test"
 )
 
 func TestPing(t *testing.T) {
