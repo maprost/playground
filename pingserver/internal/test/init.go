@@ -1,29 +1,21 @@
 package test
 
 import (
-	"flag"
 	"github.com/maprost/assertion"
-	"github.com/maprost/gox/gxarg"
-	"github.com/maprost/gox/gxcfg"
 	"net/http/httptest"
 
 	"github.com/maprost/playground/pingserver/internal"
+	"github.com/maprost/playground/pingserver/internal/sys"
 )
 
 var initServer = false
 var server *httptest.Server = nil
-var configFile string
-
-func init() {
-	gxarg.ConfigFileVar(&configFile)
-	flag.Parse()
-}
 
 func InitRestTest(t assertion.TestEnvironment) assertion.Assert {
 	assert := assertion.New(t)
 
 	if initServer == false {
-		gxcfg.InitConfig(configFile, true)
+		sys.InitConfig()
 
 		router := internal.InitServer()
 		server = httptest.NewServer(router)

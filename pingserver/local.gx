@@ -2,8 +2,7 @@
   "port": "8080",
   "docker": {
     "container": "ping-server",
-    "image": "golang:latest",
-    "volume": []
+    "image": "golang:latest"
   }
 }
 

@@ -1,9 +1,20 @@
 package sys
 
-import "github.com/maprost/gox/gxcfg"
+import (
+	"flag"
+	"github.com/maprost/gox/gxarg"
+	"github.com/maprost/gox/gxcfg"
+)
+
+var configFile string
+
+func init() {
+	gxarg.ConfigFileVar(&configFile)
+	flag.Parse()
+}
 
 func InitConfig() {
-	gxcfg.InitConfig("local.gx", true)
+	gxcfg.InitConfig(configFile, true)
 }
 
 func GetPort() string {

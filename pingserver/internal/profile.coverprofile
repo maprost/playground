@@ -1,0 +1,4 @@
+mode: count
+github.com/maprost/playground/pingserver/internal/init.go:5.31,10.2 3 1
+github.com/maprost/playground/pingserver/internal/ping.go:9.35,11.2 1 1
+github.com/maprost/playground/pingserver/internal/ping.go:13.56,18.2 3 1

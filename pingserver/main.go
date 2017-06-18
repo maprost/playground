@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
+	"net/http"
+
 	"github.com/maprost/playground/pingserver/internal"
 	"github.com/maprost/playground/pingserver/internal/sys"
-	"net/http"
 )
 
 func main() {
