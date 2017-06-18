@@ -8,8 +8,8 @@ import (
 	"github.com/maprost/playground/pingserver/clientlib"
 )
 
-func Ping204(assert assertion.Assert) {
-	Ping(assert, rctest.Status204())
+func Ping200(assert assertion.Assert) {
+	Ping(assert, rctest.Status200())
 }
 
 func Ping(assert assertion.Assert, expected restclient.Result) {

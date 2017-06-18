@@ -1,0 +1,9 @@
+From golang:latest
+
+COPY pingserver_gx /go/src/github.com/maprost/playground/pingserver
+
+COPY local.gx /go/src/github.com/maprost/playground/pingserver
+
+RUN touch FileInsideDockerContainer.gox && mv FileInsideDockerContainer.gox /go/src/github.com/maprost/playground/pingserver 
+
+ENTRYPOINT ["/go/src/github.com/maprost/playground/pingserver/pingserver_gx -config=local.gx"]

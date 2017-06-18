@@ -9,5 +9,5 @@ import (
 func TestPing(t *testing.T) {
 	assert := test.InitRestTest(t)
 
-	test.Ping204(assert)
+	test.Ping200(assert)
 }

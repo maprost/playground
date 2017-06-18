@@ -1,0 +1,9 @@
+{
+  "docker": {
+    "container": "ping-build-server"
+  }
+}
+
+
+
+

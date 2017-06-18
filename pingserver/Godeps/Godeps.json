@@ -1,0 +1,43 @@
+{
+	"ImportPath": "github.com/maprost/playground/pingserver",
+	"GoVersion": "go1.8",
+	"GodepVersion": "v79",
+	"Packages": [
+		"./..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "github.com/gorilla/mux",
+			"Comment": "v1.4.0-10-g18fca31",
+			"Rev": "18fca31550181693b3a834a15b74b564b3605876"
+		},
+		{
+			"ImportPath": "github.com/maprost/assertion",
+			"Rev": "6486c922058e54443f1749bfbf96db5f4cbe17b4"
+		},
+		{
+			"ImportPath": "github.com/maprost/gox/gxarg",
+			"Rev": "78d9db710da079ba28c974ccd99abd8e9d4eb16d"
+		},
+		{
+			"ImportPath": "github.com/maprost/gox/gxcfg",
+			"Rev": "78d9db710da079ba28c974ccd99abd8e9d4eb16d"
+		},
+		{
+			"ImportPath": "github.com/maprost/restclient",
+			"Rev": "95fd4a80f90461d1ad36bb687edb90f25a3e2dc3"
+		},
+		{
+			"ImportPath": "github.com/maprost/restclient/rcdep",
+			"Rev": "95fd4a80f90461d1ad36bb687edb90f25a3e2dc3"
+		},
+		{
+			"ImportPath": "github.com/maprost/restclient/rcquery",
+			"Rev": "95fd4a80f90461d1ad36bb687edb90f25a3e2dc3"
+		},
+		{
+			"ImportPath": "github.com/maprost/restclient/rctest",
+			"Rev": "95fd4a80f90461d1ad36bb687edb90f25a3e2dc3"
+		}
+	]
+}
